@@ -14,7 +14,7 @@ package lab4_josepereira_angel_torres;
 
 import java.util.Date;
 
-public class Eva {
+public class Eva extends RazaAncestral{
     String Color;
     Date fecha;
     double altura;
@@ -113,9 +113,15 @@ public class Eva {
     }
 
     @Override
-    public String toString() {
-        return "Eva{" + "Color=" + Color + ", fecha=" + fecha + ", altura=" + altura + ", alma=" + alma + ", num_ojos=" + num_ojos + ", pais=" + pais + ", piloto=" + piloto + ", codigo=" + codigo + ", porcentaje_dano=" + porcentaje_dano + '}';
+    public void moverse() {
+    }
+
+    @Override
+    public void atacar() {
     }
     
+   
+
+   
     
 }

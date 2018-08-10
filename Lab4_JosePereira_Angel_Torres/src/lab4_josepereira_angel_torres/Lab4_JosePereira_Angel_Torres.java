@@ -11,7 +11,8 @@ public class Lab4_JosePereira_Angel_Torres {
 
         Scanner sc = new Scanner(System.in);
         ArrayList lista = new ArrayList();
-
+        
+        
         //String Color, Date fecha, double altura, String alma, int num_ojos, String pais, Piloto piloto, String codigo, double porcentaje_dano
         Eva eva00 = new EVA_00("Amarallo", new Date(), 99, "Baal", 6, "Japón", new Piloto(), "EVA00", 100);
         Eva eva01 = new EVA_01("Rojo", new Date(), 99, "Mr. Satan", 6, "Alemania", new Piloto(), "EVA01", 200);
@@ -24,7 +25,8 @@ public class Lab4_JosePereira_Angel_Torres {
         Angeles angel_zeruel = new Zeruel("Verde", "Agua", "Azul", new Date(), "Zeruel", "No", 99);
 
         //Piloto genérico: (String Nombre, String edad, String nombre_familiar, String encargado_nerv, String escuela, double sincronizacion, Eva eva_asignado) {
-        Piloto pil = new Piloto("Shinji", "20", "Pedro", "No tiene familia", "", 0, null);
+        Piloto pil = new Piloto("Shinji", "20", "Pedro", "No tiene familia", "", 99, null);
+        Piloto pil2 = new Piloto("S666", "666", "Juan", "No tiene familia", "", 199, null);
 
         lista.add(eva00);
         lista.add(eva01);
@@ -33,11 +35,13 @@ public class Lab4_JosePereira_Angel_Torres {
         lista.add(angel_sachiel);
         lista.add(angel_ramiel);
         lista.add(angel_zeruel);
+        lista.add(pil);
+        lista.add(pil2);
 
         menu();
-        String menu = sc.next();
+        String menu = "";
         do {
-
+            menu = sc.next();
             switch (menu) {
                 case "A"://Listar EVA
                 case "a":
@@ -51,6 +55,10 @@ public class Lab4_JosePereira_Angel_Torres {
                         }
                     }
                     System.out.println(sEva);
+                    
+                    Tokyo t = new Tokyo(evaPM, angel_zeruel);
+                    
+                    t.print();
                     break;
                 case "B"://Listar Angeles
                 case "b":
@@ -63,6 +71,7 @@ public class Lab4_JosePereira_Angel_Torres {
                             indiceA++;
                         }
                     }
+                    
                     System.out.println(sAngel);
                     break;
                 case "C"://CRUD Pilotos
@@ -87,10 +96,82 @@ public class Lab4_JosePereira_Angel_Torres {
                                         System.out.println(sPil);
                                         break;
                                     case 2://Modificar Pilotos
+                                        
+                                        System.out.println("Modificar Pilotos\n");
+                                        
+                                        String listarPilotos = "";
+                                        int indicePM = 0;
+                                        
+                                        for (Object object : lista) {
+                                            if (object instanceof Piloto) {
+                                                listarPilotos += ((Piloto) object).getNombre();
+                                                //listarPilotos += indicePM + " - " + ((Piloto) object).getNombre() + "\n";
+                                                indicePM++;
+                                            }
+                                        }
+                                        System.out.println(listarPilotos);
+                                        
+                                        System.out.println("Posición a modificar: ");
+                                        int pos = sc.nextInt();
+                                        
+                                        if (pos>=0 && pos <lista.size() && lista.get(pos) instanceof Piloto){
+                                            System.out.println("Dato a modificar: ");
+                                            System.out.println(((Piloto)lista.get(pos)).getEdad());
+                                        }
+                                        
+                                                                                
                                         break;
                                     case 3://
+                                        
+                                        System.out.println("Eliminar Pilotos\n");
+                                        
+                                        String delPilotos = "";
+                                        int indiceD = 0;
+                                        
+                                        for (Object object : lista) {
+                                            if (object instanceof Piloto) {
+                                                delPilotos += indiceD + " - " + ((Piloto) object).getNombre() + "\n";
+                                                indiceD++;
+                                            }
+                                        }
+                                        System.out.println(delPilotos);
+                                        
+                                        System.out.println("Posición a Eliminar: ");
+                                        int posDel = sc.nextInt();
+                                        lista.remove(posDel);
+                                        if (posDel>=0 && posDel <lista.size() && lista.get(posDel) instanceof Piloto){
+                                            
+                                        }
+                                        
                                         break;
                                     case 4://Crear Pilotos
+                                        //String Nombre, String edad, String nombre_familiar, String encargado_nerv, String escuela, double sincronizacion, Eva eva_asignado
+                                        boolean v = true;
+                                        while (v){
+                                            try{
+                                                System.out.println("Nombre: ");
+                                                String nombre = sc.next();
+                                                System.out.println("Edad: ");
+                                                String edad = sc.next();
+                                                System.out.println("Familiar: ");
+                                                String familiar = sc.next();
+                                                System.out.println("Encargado: ");
+                                                String encargado = sc.next();
+                                                System.out.println("Escuela: ");
+                                                String escuela = sc.next();
+                                                System.out.println("Porcentaje sincronización: ");
+                                                int sync = sc.nextInt();
+                                                
+                                                Piloto piloto = new Piloto(nombre, edad, familiar, encargado, escuela, sync, new Eva());
+                                                lista.add(piloto);
+                                                
+                                                v=false;
+                                            }catch(InputMismatchException ex){
+                                                ex.printStackTrace();
+                                                v=true;
+                                            }
+                                        }
+                                        System.out.println("");
                                         break;
                                     case 0://salir
                                         break;
@@ -116,7 +197,7 @@ public class Lab4_JosePereira_Angel_Torres {
                     break;
                 case "E"://salir
                 case "e"://salir
-                    
+                    //menu= "e";
                     break;
                 default:
                     System.out.println("Opción inválida");
@@ -124,7 +205,7 @@ public class Lab4_JosePereira_Angel_Torres {
 
             }
             menu();
-            menu = sc.next();
+            //menu = sc.next();
         } while (!menu.equalsIgnoreCase("E"));
 
     }

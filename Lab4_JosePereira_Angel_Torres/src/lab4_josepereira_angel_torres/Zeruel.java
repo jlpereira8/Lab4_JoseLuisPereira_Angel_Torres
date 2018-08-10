@@ -14,11 +14,11 @@ public class Zeruel extends Angeles{
         super(color, Descripcion, color_sangre, fecha, nombre, vuela_sn, potencia);
     }
     
-    @Override
-    public void moverse() {
+   @Override
+    public void moverse(String[][]x,int i,int j,int i2,int j2) {
     }
 
     @Override
-    public void atacar() {
+    public void atacar(String[][]x,int i,int j,int i2,int j2) {
     }
 }

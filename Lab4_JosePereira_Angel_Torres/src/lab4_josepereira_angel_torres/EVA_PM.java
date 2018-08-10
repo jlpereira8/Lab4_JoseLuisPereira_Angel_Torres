@@ -14,10 +14,10 @@ public class EVA_PM extends Eva{
     }
     
     @Override
-    public void moverse() {
+    public void moverse(String[][]x,int i,int j,int i2,int j2) {
     }
 
     @Override
-    public void atacar() {
+    public void atacar(String[][]x,int i,int j,int i2,int j2) {
     }
 }

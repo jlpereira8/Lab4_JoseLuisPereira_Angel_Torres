@@ -1,15 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lab4_josepereira_angel_torres;
 
-/**
- *
- * @author j0c3lwiz
- */
+import java.util.Date;
+
+
 public class Zeruel extends Angeles{
+
+    public Zeruel() {
+        super();
+    }
+
+    public Zeruel(String color, String Descripcion, String color_sangre, Date fecha, String nombre, String vuela_sn, int potencia) {
+        super(color, Descripcion, color_sangre, fecha, nombre, vuela_sn, potencia);
+    }
+    
     @Override
     public void moverse() {
     }

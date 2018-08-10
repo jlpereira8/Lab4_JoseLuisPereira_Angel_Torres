@@ -25,7 +25,7 @@ public class Lab4_JosePereira_Angel_Torres {
         Angeles angel_zeruel = new Zeruel("Verde", "Agua", "Azul", new Date(), "Zeruel", "No", 99);
         
         //Piloto genérico: (String Nombre, String edad, String nombre_familiar, String encargado_nerv, String escuela, double sincronizacion, Eva eva_asignado) {
-        Piloto pil = new Piloto("Shinji", 20, nombre_familiar, encargado_nerv, escuela, 0, evaPM);
+        Piloto pil = new Piloto("Shinji", 20, "Pedro", encargado_nerv, escuela, 0, evaPM);
         
         lista.add(eva00);
         lista.add(eva01);

@@ -23,10 +23,31 @@ public class EVA_02 extends Eva{
     
     
     @Override
-    public void moverse(String[][]x,int i,int j,int i2,int j2) {
+    public boolean moverse(int i, int j, int i2, int j2) {
+        boolean b = false;
+        if (i2==i-2&&j2==j+1) {
+            b=true;
+        }else if (i2==i-1&&j2==j+2) {
+            b=true;
+        }else if (i2==i+1&&j2==j+2) {
+            b=true;
+        }else if (i2==i+1&&j2==j+1) {
+            b=true;
+        }else if (i2==i+2&&j2==j-1) {
+            b=true;
+        }else if (i2==i+1&&j2==j-2) {
+            b=true;
+        }else if (i2==i-1&&j2==j-2) {
+            b=true;
+        }else if (i2==i-2&&j2==j-1) {
+            b=true;
+        }
+        return b;
     }
 
     @Override
-    public void atacar(String[][]x,int i,int j,int i2,int j2) {
+        public boolean atacar(int i, int j, int i2, int j2) {
+        boolean b = true;
+        return b;
     }
 }

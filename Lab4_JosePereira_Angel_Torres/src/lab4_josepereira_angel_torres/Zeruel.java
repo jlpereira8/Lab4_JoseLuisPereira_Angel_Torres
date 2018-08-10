@@ -15,10 +15,14 @@ public class Zeruel extends Angeles{
     }
     
    @Override
-    public void moverse(String[][]x,int i,int j,int i2,int j2) {
+    public boolean moverse(int i, int j, int i2, int j2) {
+        boolean b = true;
+        return b;
     }
 
     @Override
-    public void atacar(String[][]x,int i,int j,int i2,int j2) {
+        public boolean atacar(int i, int j, int i2, int j2) {
+        boolean b = true;
+        return b;
     }
 }

@@ -116,6 +116,7 @@ public class Lab4_JosePereira_Angel_Torres {
                     break;
                 case "E"://salir
                 case "e"://salir
+                    
                     break;
                 default:
                     System.out.println("Opción inválida");

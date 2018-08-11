@@ -223,66 +223,7 @@ public class Lab4_JosePereira_Angel_Torres {
                 case "D"://Simulación
                 case "d":
                     
-                    Boolean vv = true;
-                        int pos1,pos2;
-                        System.out.println("Nueva partida\n");
-                        //if (lista.isEmpty()) {
-                            //System.out.println("No hay Angeles ni Evas");
-                            
-                        
-                        for (int i = 0; i < lista.size(); i++) {
-                            
-                            if (lista.get(i) instanceof Eva) {
-                                System.out.println((lista.get(i)));
-                            }
-                        }
-                            
-                        while (vv) {
-                            try {
-                                System.out.println("Ingrese Posicion del Eva:");
-                                sc = new Scanner(System.in);
-                                int opc = sc.nextInt();
-                                opc--;
-                                ev= (Eva)lista.get(opc);
-                                vv = false;
-                            } catch (Exception e1) {
-                                System.out.println("Debe ingresar un entero");
-                                vv = true;
-                            }
-                        }
-                        vv = true;
-                        
-                        while (vv) {
-                            try {
-                                System.out.println("Ingrese Posicion del Ángel:");
-                                sc = new Scanner(System.in);
-                                int opc = sc.nextInt();
-                                opc--;
-                                an= (Angeles)lista.get(opc);
-                                vv = false;
-                            } catch (Exception e1) {
-                                System.out.println("Debe ingresar un entero");
-                                vv = true;
-                            }
-                        }
-                        vv = true;
-                        
-                        Tokyo tok = new Tokyo(ev, an);
-                        tok.colocar();
-                        sc = new Scanner(System.in);
-                        int x1,x2,y1,y2;
-                        int turno = 0;
-                        
-                        
-                        
-                        
-                    try {
-                        
-                            
-                        //}
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    
                     break;
                 case "E"://salir
                 case "e"://salir

@@ -229,10 +229,9 @@ public class Lab4_JosePereira_Angel_Torres {
                         //if (lista.isEmpty()) {
                             //System.out.println("No hay Angeles ni Evas");
                             
-                        //}else{
-                            int cont = 0;
+                        
                         for (int i = 0; i < lista.size(); i++) {
-                            cont++;
+                            
                             if (lista.get(i) instanceof Eva) {
                                 System.out.println((lista.get(i)));
                             }
@@ -270,13 +269,12 @@ public class Lab4_JosePereira_Angel_Torres {
                         
                         Tokyo tok = new Tokyo(ev, an);
                         tok.colocar();
-                        tok.colocar();
                         sc = new Scanner(System.in);
-                        int x1,
-                                x2,
-                                y1,
-                                y2;
+                        int x1,x2,y1,y2;
                         int turno = 0;
+                        
+                        
+                        
                         
                     try {
                         
@@ -299,6 +297,10 @@ public class Lab4_JosePereira_Angel_Torres {
             //menu = sc.next();
         } while (!menu.equalsIgnoreCase("E"));
 
+    }
+    
+    public static void matriz(){
+        
     }
 
     public static void menu() {

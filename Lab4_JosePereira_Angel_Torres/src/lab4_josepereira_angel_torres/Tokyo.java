@@ -99,6 +99,13 @@ public class Tokyo {
         bfVisible[1][4] = "SS";
         bfVisible[1][5] = "SS";
         
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                switch (bfVisible[i][j]) {
+                    
+                }
+            }
+        }
         
     }
     
@@ -108,6 +115,19 @@ public class Tokyo {
                 
                System.out.print(battlefield[i][j] + " ");
                 
+            }
+            System.out.println("");
+        }
+    }
+    
+    public void imprimir() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (bfVisible[i][j].length() > 1) {
+                    System.out.print(bfVisible[i][j] + " ");
+                } else {
+                    System.out.print(bfVisible[i][j] + " ");
+                }
             }
             System.out.println("");
         }

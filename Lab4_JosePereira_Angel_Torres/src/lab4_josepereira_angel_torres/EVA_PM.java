@@ -25,7 +25,31 @@ public class EVA_PM extends Eva {
     
     @Override
     public boolean atacar(int i, int j, int i2, int j2) {
-        boolean b = true;
+        boolean b = false;
+        if (i2 == i+ 1 && j2 == j + 1) {
+            b = true;
+        }
+        if (i2 == i - 1 && j2 == j - 1) {
+            b = true;
+        }
+        if (i2 == i + 1 && j2 == j - 1) {
+            b = true;
+        }
+        if (i2 == i - 1 && j2 == j + 1) {
+            b = true;
+        }
+        if (i2== i + 1) {
+            b = true;
+        }
+        if (i2 == i - 1) {
+            b = true;
+        }
+        if (j2 == j + 1) {
+            b = true;
+        }
+        if (j2 == j - 1) {
+          b = true;
+        }
         return b;
     }
 }

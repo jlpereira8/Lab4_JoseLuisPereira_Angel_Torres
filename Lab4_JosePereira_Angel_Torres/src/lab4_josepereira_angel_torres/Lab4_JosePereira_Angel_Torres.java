@@ -7,14 +7,41 @@ import java.util.Scanner;
 
 public class Lab4_JosePereira_Angel_Torres {
 
+    static String[][] battlefield = new String[10][10];
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         ArrayList lista = new ArrayList();
-        Eva ev= new Eva();
+        Eva ev = new Eva();
         Angeles an = new Angeles();
-        
-        
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                battlefield[i][j] = "  ";
+            }
+        }
+        battlefield[9][0] = "PM";
+        battlefield[9][2] = "PM";
+        battlefield[9][7] = "PM";
+        battlefield[9][9] = "PM";
+
+        battlefield[9][3] = "E0";
+        battlefield[9][6] = "E0";
+
+        battlefield[9][5] = "E1";
+        battlefield[9][4] = "E2";
+
+        battlefield[0][2] = "RR";
+        battlefield[0][7] = "RR";
+
+        battlefield[1][8] = "ZZ";
+        battlefield[1][1] = "ZZ";
+        battlefield[3][2] = "ZZ";
+        battlefield[3][7] = "ZZ";
+
+        battlefield[1][4] = "SS";
+        battlefield[1][5] = "SS";
+
         //String Color, Date fecha, double altura, String alma, int num_ojos, String pais, Piloto piloto, String codigo, double porcentaje_dano
         Eva eva00 = new EVA_00("Amarallo", new Date(), 99, "Baal", 6, "Japón", new Piloto(), "EVA00", 100);
         Eva eva01 = new EVA_01("Rojo", new Date(), 99, "Mr. Satan", 6, "Alemania", new Piloto(), "EVA01", 200);
@@ -58,7 +85,6 @@ public class Lab4_JosePereira_Angel_Torres {
                     }
                     System.out.println(sEva);
 
-                    
                     break;
                 case "B"://Listar Angeles
                 case "b":
@@ -84,11 +110,11 @@ public class Lab4_JosePereira_Angel_Torres {
                             do {
                                 switch (menuPiloto) {
                                     case 1://Listar Pilotos
-                                        
+
                                         System.out.println("Lista de Pilotos\n");
                                         for (int i = 0; i < lista.size(); i++) {
                                             if (lista.get(i) instanceof Piloto) {
-                                                System.out.println(i+" ) "+lista.get(i).toString());
+                                                System.out.println(i + " ) " + lista.get(i).toString());
                                             }
                                         }
                                         //System.out.println();
@@ -100,7 +126,7 @@ public class Lab4_JosePereira_Angel_Torres {
                                         System.out.println("Lista de Pilotos\n");
                                         for (int i = 0; i < lista.size(); i++) {
                                             if (lista.get(i) instanceof Piloto) {
-                                                System.out.println(i+" ) "+lista.get(i).toString());
+                                                System.out.println(i + " ) " + lista.get(i).toString());
                                             }
                                         }
 
@@ -108,47 +134,45 @@ public class Lab4_JosePereira_Angel_Torres {
                                         int pos = sc.nextInt();
 
                                         if (pos >= 0 && pos < lista.size() && lista.get(pos) instanceof Piloto) {
-                                            System.out.println(((Piloto)lista.get(pos)).getInfo());
+                                            System.out.println(((Piloto) lista.get(pos)).getInfo());
                                             System.out.println("Dato a modificar: ");
                                             int poModif = sc.nextInt();
-                                            
-                                            
-                                            
-                                            if(poModif==1){
+
+                                            if (poModif == 1) {
                                                 System.out.println("Nuevo Nombre: ");
                                                 String nNombre = sc.next();
-                                                ((Piloto)lista.get(pos)).setNombre(nNombre);
+                                                ((Piloto) lista.get(pos)).setNombre(nNombre);
                                             }
-                                            if(poModif==2){
+                                            if (poModif == 2) {
                                                 System.out.println("Nuevo Edad: ");
                                                 String nEdad = sc.next();
-                                                ((Piloto)lista.get(pos)).setEscuela(nEdad);
+                                                ((Piloto) lista.get(pos)).setEscuela(nEdad);
                                             }
-                                            if(poModif==3){
+                                            if (poModif == 3) {
                                                 System.out.println("Nuevo Familiar: ");
                                                 String nFamiliar = sc.next();
-                                                ((Piloto)lista.get(pos)).setNombre_familiar(nFamiliar);
-                                                
+                                                ((Piloto) lista.get(pos)).setNombre_familiar(nFamiliar);
+
                                             }
-                                            if(poModif==4){
+                                            if (poModif == 4) {
                                                 System.out.println("Nuevo Encargado NERC: ");
                                                 String nEncar = sc.next();
-                                                ((Piloto)lista.get(pos)).setEncargado_nerv(nEncar);
+                                                ((Piloto) lista.get(pos)).setEncargado_nerv(nEncar);
                                             }
-                                            if(poModif==5){
+                                            if (poModif == 5) {
                                                 System.out.println("Nuevo Escuela: ");
                                                 String nEscuela = sc.next();
-                                                ((Piloto)lista.get(pos)).setEscuela(nEscuela);
+                                                ((Piloto) lista.get(pos)).setEscuela(nEscuela);
                                             }
-                                            if(poModif==6){
+                                            if (poModif == 6) {
                                                 System.out.println("Porcentaje Sincronización: ");
                                                 int pSync = sc.nextInt();
-                                                ((Piloto)lista.get(pos)).setSincronizacion(pSync);
+                                                ((Piloto) lista.get(pos)).setSincronizacion(pSync);
                                             }
-                                            if(poModif==7){
+                                            if (poModif == 7) {
                                                 System.out.println("");
                                             }
-                                            
+
                                         }
 
                                         break;
@@ -158,7 +182,7 @@ public class Lab4_JosePereira_Angel_Torres {
                                         System.out.println("Lista de Pilotos\n");
                                         for (int i = 0; i < lista.size(); i++) {
                                             if (lista.get(i) instanceof Piloto) {
-                                                System.out.println(i+" ) "+lista.get(i).toString());
+                                                System.out.println(i + " ) " + lista.get(i).toString());
                                             }
                                         }
 
@@ -166,10 +190,9 @@ public class Lab4_JosePereira_Angel_Torres {
                                         int posE = sc.nextInt();
 
                                         if (posE >= 0 && posE < lista.size() && lista.get(posE) instanceof Piloto) {
-                                            lista.remove(posE);                                         
-                                            
+                                            lista.remove(posE);
+
                                         }
-                                        
 
                                         break;
                                     case 4://Crear Pilotos
@@ -195,7 +218,7 @@ public class Lab4_JosePereira_Angel_Torres {
 
                                                 v = false;
                                             } catch (InputMismatchException ex) {
-                                                ex.printStackTrace();
+                                                System.out.println("Dato no valido");
                                                 v = true;
                                             }
                                         }
@@ -212,7 +235,6 @@ public class Lab4_JosePereira_Angel_Torres {
                             } while (menuPiloto != 0);
 
                         } catch (InputMismatchException ex) {
-                            ex.printStackTrace();
                             System.out.println("Ingrese un valor numérico");
                             b = false;
                         }
@@ -222,9 +244,274 @@ public class Lab4_JosePereira_Angel_Torres {
                     break;
                 case "D"://Simulación
                 case "d":
-                    
-                    
+                    try {
+                        int aux = 1;
+                        boolean bo = true;
+                        while (bo) {
+                            imprimir(battlefield);
+                            if (aux % 2 != 0) {
+
+                                System.out.println("Ingrese la pieza x");
+                                int x = sc.nextInt();
+                                System.out.println("Ingrese la pieza y");
+                                int y = sc.nextInt();
+                                System.out.println("Ingrese a donde desea mover x");
+                                int x2 = sc.nextInt();
+                                System.out.println("Ingrese a donde desea mover y");
+                                int y2 = sc.nextInt();
+                                if (battlefield[x][y].equals("PM")) {
+                                    EVA_PM pm = new EVA_PM();
+
+                                    boolean p = pm.moverse(x, y, x2, y2);
+                                    if (!battlefield[x][y].equals(" ")) {
+                                        p = false;
+                                    }
+                                    if (p == false) {
+                                        System.out.println("");
+                                        System.out.println("Dato No Valido");
+                                        System.out.println("");
+                                        System.out.println("Ingrese hasta que sea Valido");
+                                        System.out.println("");
+                                        boolean t = true;
+                                        while (t) {
+                                            imprimir(battlefield);
+                                            System.out.println("Ingrese la pieza x");
+                                            x = sc.nextInt();
+                                            System.out.println("Ingrese la pieza y");
+                                            y = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover x");
+                                            x2 = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover y");
+                                            y2 = sc.nextInt();
+                                            if (battlefield[x][y].equals("PM")) {
+                                                pm = new EVA_PM();
+                                                boolean e = pm.moverse(x, y, x2, y2);
+                                                if (e == true) {
+                                                    t = false;
+                                                }
+                                            }
+                                        }
+                                        battlefield[x][y] = "  ";
+                                        battlefield[x2][y2] = "PM";
+                                        aux++;
+                                    } else {
+                                        battlefield[x][y] = " ";
+                                        battlefield[x2][y2] = "PM";
+                                        aux++;
+                                    }
+                                } else if (battlefield[x][y].equals("E0")) {
+                                    imprimir(battlefield);
+
+                                    EVA_00 pm = new EVA_00();
+                                    boolean p = pm.moverse(x, y, x2, y2);
+                                    if (!battlefield[x][y].equals("  ")) {
+                                        p = false;
+                                    }
+                                    if (p == false) {
+                                        System.out.println("");
+                                        System.out.println("Dato No Valido");
+                                        System.out.println("");
+                                        System.out.println("Ingrese hasta que sea Valido");
+                                        System.out.println("");
+                                        boolean t = true;
+                                        while (t) {
+                                            imprimir(battlefield);
+                                            System.out.println("Ingrese la pieza x");
+                                            x = sc.nextInt();
+                                            System.out.println("Ingrese la pieza y");
+                                            y = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover x");
+                                            x2 = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover y");
+                                            y2 = sc.nextInt();
+                                            if (battlefield[x][y].equals("E0")) {
+                                                pm = new EVA_00();
+                                                boolean e = pm.moverse(x, y, x2, y2);
+                                                if (e == true) {
+                                                    t = false;
+                                                }
+                                            }
+                                        }
+                                        battlefield[x][y] = "  ";
+                                        battlefield[x2][y2] = "E0";
+
+                                    } else {
+                                        battlefield[x][y] = " ";
+                                        battlefield[x2][y2] = "E0";
+                                    }
+
+                                } else if (battlefield[x][y].equals("E1")) {
+                                    imprimir(battlefield);
+
+                                    EVA_01 pm = new EVA_01();
+                                    boolean p = pm.moverse(x, y, x2, y2);
+                                    if (!battlefield[x][y].equals("  ")) {
+                                        p = false;
+                                    }
+                                    if (p == false) {
+                                        System.out.println("");
+                                        System.out.println("Dato No Valido");
+                                        System.out.println("");
+                                        System.out.println("Ingrese hasta que sea Valido");
+                                        System.out.println("");
+                                        boolean t = true;
+                                        while (t) {
+                                            imprimir(battlefield);
+                                            System.out.println("Ingrese la pieza x");
+                                            x = sc.nextInt();
+                                            System.out.println("Ingrese la pieza y");
+                                            y = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover x");
+                                            x2 = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover y");
+                                            y2 = sc.nextInt();
+                                            if (battlefield[x][y].equals("E1")) {
+                                                pm = new EVA_01();
+                                                boolean e = pm.moverse(x, y, x2, y2);
+                                                if (e == true) {
+                                                    t = false;
+                                                }
+                                            }
+                                        }
+                                        battlefield[x][y] = "  ";
+                                        battlefield[x2][y2] = "E1";
+
+                                    } else {
+                                        battlefield[x][y] = " ";
+                                        battlefield[x2][y2] = "E1";
+                                    }
+                                } else if (battlefield[x][y].equals("E2")) {
+                                    imprimir(battlefield);
+
+                                    EVA_02 pm = new EVA_02();
+                                    boolean p = pm.moverse(x, y, x2, y2);
+                                    if (!battlefield[x][y].equals("  ")) {
+                                        p = false;
+                                    }
+                                    if (p == false) {
+                                        System.out.println("");
+                                        System.out.println("Dato No Valido");
+                                        System.out.println("");
+                                        System.out.println("Ingrese hasta que sea Valido");
+                                        System.out.println("");
+                                        boolean t = true;
+                                        while (t) {
+                                            imprimir(battlefield);
+                                            System.out.println("Ingrese la pieza x");
+                                            x = sc.nextInt();
+                                            System.out.println("Ingrese la pieza y");
+                                            y = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover x");
+                                            x2 = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover y");
+                                            y2 = sc.nextInt();
+                                            if (battlefield[x][y].equals("E0")) {
+                                                pm = new EVA_02();
+                                                boolean e = pm.moverse(x, y, x2, y2);
+                                                if (e == true) {
+                                                    t = false;
+                                                }
+                                            }
+                                        }
+                                        battlefield[x][y] = "  ";
+                                        battlefield[x2][y2] = "E2";
+
+                                    } else {
+                                        battlefield[x][y] = " ";
+                                        battlefield[x2][y2] = "E2";
+                                    }
+
+                                } else if (battlefield[x][y].equals("ZZ")) {
+                                    imprimir(battlefield);
+
+                                    Zeruel pm = new Zeruel();
+                                    boolean p = pm.moverse(x, y, x2, y2);
+                                    if (!battlefield[x][y].equals("  ")) {
+                                        p = false;
+                                    }
+                                    if (p == false) {
+                                        System.out.println("");
+                                        System.out.println("Dato No Valido");
+                                        System.out.println("");
+                                        System.out.println("Ingrese hasta que sea Valido");
+                                        System.out.println("");
+                                        boolean t = true;
+                                        while (t) {
+                                            imprimir(battlefield);
+                                            System.out.println("Ingrese la pieza x");
+                                            x = sc.nextInt();
+                                            System.out.println("Ingrese la pieza y");
+                                            y = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover x");
+                                            x2 = sc.nextInt();
+                                            System.out.println("Ingrese a donde desea mover y");
+                                            y2 = sc.nextInt();
+                                            if (battlefield[x][y].equals("E0")) {
+                                                pm = new Zeruel();
+                                                boolean e = pm.moverse(x, y, x2, y2);
+                                                if (e == true) {
+                                                    t = false;
+                                                }
+                                            }
+                                        }
+                                        battlefield[x][y] = "  ";
+                                        battlefield[x2][y2] = "ZZ";
+
+                                    } else {
+                                        battlefield[x][y] = " ";
+                                        battlefield[x2][y2] = "ZZ";
+                                    }
+                                }else if (battlefield[x][y].equals("SS")) {
+                                    imprimir(battlefield);
+                                
+
+                                        Sachiel pm = new Sachiel();
+                                        boolean p = pm.moverse(x, y, x2, y2);                                      
+                                        if (!battlefield[x][y].equals("  ")) {
+                                            p = false;
+                                        }
+                                        if (p == false) {
+                                            System.out.println("");
+                                            System.out.println("Dato No Valido");
+                                            System.out.println("");
+                                            System.out.println("Ingrese hasta que sea Valido");
+                                            System.out.println("");
+                                            boolean t = true;
+                                            while (t) {
+                                                imprimir(battlefield);
+                                                System.out.println("Ingrese la pieza x");
+                                                x = sc.nextInt();
+                                                System.out.println("Ingrese la pieza y");
+                                                y = sc.nextInt();
+                                                System.out.println("Ingrese a donde desea mover x");
+                                                x2 = sc.nextInt();
+                                                System.out.println("Ingrese a donde desea mover y");
+                                                y2 = sc.nextInt();
+                                                if (battlefield[x][y].equals("E0")) {
+                                                    pm = new Sachiel();
+                                                    boolean e = pm.moverse(x, y, x2, y2);
+                                                    if (e == true) {
+                                                        t = false;
+                                                    }
+                                                }
+                                            }
+                                            battlefield[x][y] = "  ";
+                                            battlefield[x2][y2] = "SS";
+
+                                        } else {
+                                            battlefield[x][y] = " ";
+                                            battlefield[x2][y2] = "SS";
+                                        }
+                            }
+                        }
+                        }
+
+                    } catch (Exception e) {
+                        System.out.println("Dato no valido");
+                    }
+
                     break;
+
                 case "E"://salir
                 case "e"://salir
                     //menu= "e";
@@ -239,9 +526,9 @@ public class Lab4_JosePereira_Angel_Torres {
         } while (!menu.equalsIgnoreCase("E"));
 
     }
-    
-    public static void matriz(){
-        
+
+    public static void matriz() {
+
     }
 
     public static void menu() {
@@ -260,6 +547,15 @@ public class Lab4_JosePereira_Angel_Torres {
                 + "3 - Eliminar\n"
                 + "4 - Crear\n"
                 + "0 - Regresar\n");
+    }
+
+    public static void imprimir(String[][] x) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print("[" + x[i][j] + "]");
+            }
+            System.out.println("");
+        }
     }
 
 }

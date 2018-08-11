@@ -22,7 +22,37 @@ public class EVA_01 extends Eva{
      @Override
     public boolean moverse(int i, int j, int i2, int j2) {
         boolean b = true;
-         if (j2>=j+3||i2>=i+3) {
+         if (j2==j-2&&i2==i-2) {
+             b=true;
+         }else if (j2==j-1&&i2==i-1) {
+             b=true;
+         }else if (j2==j&&i2==i-2) {
+             b=true;
+         }else if (j2==j+1&&i2==i-2) {
+             b=true;
+         }else if (i2==i-2&&j2==j+2) {
+             b=true;
+         }else if (i2==i-1&&j2==j-2) {
+             b=true;
+         }else if (i2==i&&j2==j-2) {
+             b=true;
+         }else if (i2==i+1&&j2==j-2) {
+             b=true;
+         }else if (i2==i+2&&j2==j-2) {
+             b=true;
+         }else if (i2==i+2&&j2==j-1) {
+             b=true;   
+         }else if (i2==i+2&&j2==j) {
+             b=true;
+         }else if (i2==i+2&&j2==j+1) {
+             b=true;
+         }else if (i2==i+2&&j2==j+2) {
+             b=true;
+         }else if (i2==i+1&&j2==j+2) {
+             b=true;
+         }else if (i2==i&&j2==j+2) {
+             b=true;
+         }else if (i2==i-1&&j2==j+2) {
              
          }
         return b;

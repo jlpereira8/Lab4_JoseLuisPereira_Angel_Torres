@@ -20,8 +20,12 @@ public class Sachiel extends Angeles{
         boolean b = false;
         if (i2==i-1&&j2==j+1) {
             b=true;
-        }else if (true) {
-            
+        }else if (i2==i+1&&j2==j-1) {
+            b=true;
+        }else if (i2==i-1&&j2==j-1) {
+            b=true;
+        }else if (i2==i+1&&j2==j+1) {
+            b=true;
         }
         return b;
     }

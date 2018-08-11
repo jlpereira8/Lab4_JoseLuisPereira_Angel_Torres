@@ -18,7 +18,24 @@ public class Ramiel extends Angeles{
     
    @Override
     public boolean moverse(int i, int j, int i2, int j2) {
-        boolean b = true;
+        boolean b = false;
+        if (i2==i-1&&j2==j+1) {
+            b=true;
+        }else if (i2==i+1&&j2==j-1) {
+            b=true;
+        }else if (i2==i-1&&j2==j-1) {
+            b=true;
+        }else if (i2==i+1&&j2==j+1) {
+            b=true;
+        }else if (i2==i-1&&j2==j) {
+           b=true;
+       }else if (i2==i&&j2==j+1) {
+           b=true;
+       }else if (i2==i+1&&j2==j) {
+           b=true;
+       }else if (i2==i&&j2==j-1) {
+           b=true;
+       }
         return b;
     }
 

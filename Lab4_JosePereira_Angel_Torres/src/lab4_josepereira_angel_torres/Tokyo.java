@@ -7,13 +7,13 @@ import java.util.ArrayList;
 
 public class Tokyo {
     
-    public Object[][] battlefield;
+    public String[][] battlefield;
     public String[][] bfVisible;
     private ArrayList evas = new ArrayList();
     private ArrayList angeles = new ArrayList();
 
     public Tokyo(Eva ev, Angeles an) {
-        battlefield = new Object[10][10];
+        battlefield = new String[10][10];
         bfVisible = new String[10][10];
         
         battlefield[9][0]="PM";

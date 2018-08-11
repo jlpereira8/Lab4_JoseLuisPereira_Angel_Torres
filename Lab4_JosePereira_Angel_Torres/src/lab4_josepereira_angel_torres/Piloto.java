@@ -92,6 +92,19 @@ public class Piloto {
         this.eva_asignado = eva_asignado;
     }
 
+    public String getInfo(){
+        String m="";
+        m+="\n"+1 +" - Nombre: "+this.Nombre;
+        m+="\n"+2 +" - Apellido: "+this.edad;
+        m+="\n"+3 +" - Familiar: "+this.nombre_familiar;
+        m+="\n"+4 +" - Encargado Nerv: "+this.encargado_nerv;
+        m+="\n"+5 +" - Escuela: "+this.escuela;
+        m+="\n"+6 +" - Porcentaje Sincronización: "+this.sincronizacion;
+        m+="\n"+7 +" - Eva Asignado: "+this.eva_asignado;
+        
+        return m;
+    }
+    
     @Override
     public String toString() {
         return "Piloto{" + "Nombre=" + Nombre + ", edad=" + edad + ", nombre_familiar=" + nombre_familiar + ", encargado_nerv=" + encargado_nerv + ", escuela=" + escuela + ", sincronizacion=" + sincronizacion + ", eva_asignado=" + eva_asignado + '}';

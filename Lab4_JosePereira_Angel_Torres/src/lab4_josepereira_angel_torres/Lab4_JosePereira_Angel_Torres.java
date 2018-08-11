@@ -11,6 +11,8 @@ public class Lab4_JosePereira_Angel_Torres {
 
         Scanner sc = new Scanner(System.in);
         ArrayList lista = new ArrayList();
+        Eva ev= new Eva();
+        Angeles an = new Angeles();
         
         
         //String Color, Date fecha, double altura, String alma, int num_ojos, String pais, Piloto piloto, String codigo, double porcentaje_dano
@@ -55,10 +57,8 @@ public class Lab4_JosePereira_Angel_Torres {
                         }
                     }
                     System.out.println(sEva);
+
                     
-                    Tokyo t = new Tokyo(evaPM, angel_zeruel);
-                    
-                    t.print();
                     break;
                 case "B"://Listar Angeles
                 case "b":
@@ -71,7 +71,7 @@ public class Lab4_JosePereira_Angel_Torres {
                             indiceA++;
                         }
                     }
-                    
+
                     System.out.println(sAngel);
                     break;
                 case "C"://CRUD Pilotos
@@ -84,71 +84,99 @@ public class Lab4_JosePereira_Angel_Torres {
                             do {
                                 switch (menuPiloto) {
                                     case 1://Listar Pilotos
-                                        String sPil = "";
-                                        int indiceP = 0;
+                                        
                                         System.out.println("Lista de Pilotos\n");
-                                        for (Object object : lista) {
-                                            if (object instanceof Piloto) {
-                                                sPil += indiceP + " - " + ((Piloto) object).getNombre() + "\n";
-                                                indiceP++;
+                                        for (int i = 0; i < lista.size(); i++) {
+                                            if (lista.get(i) instanceof Piloto) {
+                                                System.out.println(i+" ) "+lista.get(i).toString());
                                             }
                                         }
-                                        System.out.println(sPil);
+                                        //System.out.println();
                                         break;
                                     case 2://Modificar Pilotos
-                                        
+
                                         System.out.println("Modificar Pilotos\n");
-                                        
-                                        String listarPilotos = "";
-                                        int indicePM = 0;
-                                        
-                                        for (Object object : lista) {
-                                            if (object instanceof Piloto) {
-                                                listarPilotos += ((Piloto) object).getNombre();
-                                                //listarPilotos += indicePM + " - " + ((Piloto) object).getNombre() + "\n";
-                                                indicePM++;
+
+                                        System.out.println("Lista de Pilotos\n");
+                                        for (int i = 0; i < lista.size(); i++) {
+                                            if (lista.get(i) instanceof Piloto) {
+                                                System.out.println(i+" ) "+lista.get(i).toString());
                                             }
                                         }
-                                        System.out.println(listarPilotos);
-                                        
+
                                         System.out.println("Posición a modificar: ");
                                         int pos = sc.nextInt();
-                                        
-                                        if (pos>=0 && pos <lista.size() && lista.get(pos) instanceof Piloto){
+
+                                        if (pos >= 0 && pos < lista.size() && lista.get(pos) instanceof Piloto) {
+                                            System.out.println(((Piloto)lista.get(pos)).getInfo());
                                             System.out.println("Dato a modificar: ");
-                                            System.out.println(((Piloto)lista.get(pos)).getEdad());
+                                            int poModif = sc.nextInt();
+                                            
+                                            
+                                            
+                                            if(poModif==1){
+                                                System.out.println("Nuevo Nombre: ");
+                                                String nNombre = sc.next();
+                                                ((Piloto)lista.get(pos)).setNombre(nNombre);
+                                            }
+                                            if(poModif==2){
+                                                System.out.println("Nuevo Edad: ");
+                                                String nEdad = sc.next();
+                                                ((Piloto)lista.get(pos)).setEscuela(nEdad);
+                                            }
+                                            if(poModif==3){
+                                                System.out.println("Nuevo Familiar: ");
+                                                String nFamiliar = sc.next();
+                                                ((Piloto)lista.get(pos)).setNombre_familiar(nFamiliar);
+                                                
+                                            }
+                                            if(poModif==4){
+                                                System.out.println("Nuevo Encargado NERC: ");
+                                                String nEncar = sc.next();
+                                                ((Piloto)lista.get(pos)).setEncargado_nerv(nEncar);
+                                            }
+                                            if(poModif==5){
+                                                System.out.println("Nuevo Escuela: ");
+                                                String nEscuela = sc.next();
+                                                ((Piloto)lista.get(pos)).setEscuela(nEscuela);
+                                            }
+                                            if(poModif==6){
+                                                System.out.println("Porcentaje Sincronización: ");
+                                                int pSync = sc.nextInt();
+                                                ((Piloto)lista.get(pos)).setSincronizacion(pSync);
+                                            }
+                                            if(poModif==7){
+                                                System.out.println("");
+                                            }
+                                            
                                         }
-                                        
-                                                                                
+
                                         break;
                                     case 3://
-                                        
                                         System.out.println("Eliminar Pilotos\n");
-                                        
-                                        String delPilotos = "";
-                                        int indiceD = 0;
-                                        
-                                        for (Object object : lista) {
-                                            if (object instanceof Piloto) {
-                                                delPilotos += indiceD + " - " + ((Piloto) object).getNombre() + "\n";
-                                                indiceD++;
+
+                                        System.out.println("Lista de Pilotos\n");
+                                        for (int i = 0; i < lista.size(); i++) {
+                                            if (lista.get(i) instanceof Piloto) {
+                                                System.out.println(i+" ) "+lista.get(i).toString());
                                             }
                                         }
-                                        System.out.println(delPilotos);
-                                        
+
                                         System.out.println("Posición a Eliminar: ");
-                                        int posDel = sc.nextInt();
-                                        lista.remove(posDel);
-                                        if (posDel>=0 && posDel <lista.size() && lista.get(posDel) instanceof Piloto){
+                                        int posE = sc.nextInt();
+
+                                        if (posE >= 0 && posE < lista.size() && lista.get(posE) instanceof Piloto) {
+                                            lista.remove(posE);                                         
                                             
                                         }
                                         
+
                                         break;
                                     case 4://Crear Pilotos
                                         //String Nombre, String edad, String nombre_familiar, String encargado_nerv, String escuela, double sincronizacion, Eva eva_asignado
                                         boolean v = true;
-                                        while (v){
-                                            try{
+                                        while (v) {
+                                            try {
                                                 System.out.println("Nombre: ");
                                                 String nombre = sc.next();
                                                 System.out.println("Edad: ");
@@ -161,14 +189,14 @@ public class Lab4_JosePereira_Angel_Torres {
                                                 String escuela = sc.next();
                                                 System.out.println("Porcentaje sincronización: ");
                                                 int sync = sc.nextInt();
-                                                
+
                                                 Piloto piloto = new Piloto(nombre, edad, familiar, encargado, escuela, sync, new Eva());
                                                 lista.add(piloto);
-                                                
-                                                v=false;
-                                            }catch(InputMismatchException ex){
+
+                                                v = false;
+                                            } catch (InputMismatchException ex) {
                                                 ex.printStackTrace();
-                                                v=true;
+                                                v = true;
                                             }
                                         }
                                         System.out.println("");
@@ -192,8 +220,71 @@ public class Lab4_JosePereira_Angel_Torres {
                     }
 
                     break;
-                case "D":
+                case "D"://Simulación
                 case "d":
+                    
+                    Boolean vv = true;
+                        int pos1,pos2;
+                        System.out.println("Nueva partida\n");
+                        //if (lista.isEmpty()) {
+                            //System.out.println("No hay Angeles ni Evas");
+                            
+                        //}else{
+                            int cont = 0;
+                        for (int i = 0; i < lista.size(); i++) {
+                            cont++;
+                            if (lista.get(i) instanceof Eva) {
+                                System.out.println((lista.get(i)));
+                            }
+                        }
+                            
+                        while (vv) {
+                            try {
+                                System.out.println("Ingrese Posicion del Eva:");
+                                sc = new Scanner(System.in);
+                                int opc = sc.nextInt();
+                                opc--;
+                                ev= (Eva)lista.get(opc);
+                                vv = false;
+                            } catch (Exception e1) {
+                                System.out.println("Debe ingresar un entero");
+                                vv = true;
+                            }
+                        }
+                        vv = true;
+                        
+                        while (vv) {
+                            try {
+                                System.out.println("Ingrese Posicion del Ángel:");
+                                sc = new Scanner(System.in);
+                                int opc = sc.nextInt();
+                                opc--;
+                                an= (Angeles)lista.get(opc);
+                                vv = false;
+                            } catch (Exception e1) {
+                                System.out.println("Debe ingresar un entero");
+                                vv = true;
+                            }
+                        }
+                        vv = true;
+                        
+                        Tokyo tok = new Tokyo(ev, an);
+                        tok.colocar();
+                        tok.colocar();
+                        sc = new Scanner(System.in);
+                        int x1,
+                                x2,
+                                y1,
+                                y2;
+                        int turno = 0;
+                        
+                    try {
+                        
+                            
+                        //}
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case "E"://salir
                 case "e"://salir

@@ -113,6 +113,13 @@ public class Eva extends RazaAncestral{
     }
 
     @Override
+    public String toString() {
+        return "Eva{" + "Color=" + Color + ", fecha=" + fecha + ", altura=" + altura + ", alma=" + alma + ", num_ojos=" + num_ojos + ", pais=" + pais + ", piloto=" + piloto + ", codigo=" + codigo + ", porcentaje_dano=" + porcentaje_dano + '}';
+    }
+
+    
+    
+    @Override
     public boolean moverse(int i, int j, int i2, int j2) {
         boolean b = true;
         return b;
